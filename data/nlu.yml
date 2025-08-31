@@ -1,8 +1,6 @@
 version: "3.1"
 
 nlu:
-
-
 - intent: elegir_opcion
   examples: |
     - 1
@@ -25,7 +23,6 @@ nlu:
     - cinco
     - hablar con farmacéutico
     - quiero hablar con alguien
-
 
 - intent: saludo
   examples: |
