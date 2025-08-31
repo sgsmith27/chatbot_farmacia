@@ -31,7 +31,6 @@ intents:
   - enviar_calificacion   
   - reporte_feedback
 
-
 entities:
   - sintoma
   - nombre
@@ -87,7 +86,6 @@ slots:
         conditions:
           - active_loop: contacto_ticket_form
             requested_slot: motivo
-
   rating:
     type: text
     influence_conversation: false
@@ -95,9 +93,6 @@ slots:
       - type: from_entity
         entity: rating
 
-        
-
-  
 forms:
   contacto_ticket_form:
     required_slots:
@@ -106,7 +101,6 @@ forms:
       - correo
       - preferencia_contacto
       - motivo
-
   
 responses:
   utter_greet:
@@ -183,7 +177,6 @@ responses:
       buttons:
         - title: "Ir al menú"
           payload: "menú"
-
 
   utter_mostrar_lista_medicamentos:
     - text: |
