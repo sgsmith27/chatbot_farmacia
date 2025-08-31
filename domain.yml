@@ -1,0 +1,266 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida_fin
+  - consultar_sintoma
+  - consultar_medicamento
+  - ubicacion
+  - horario
+  - hablar_farmaceutico
+  - elegir_opcion
+  - opcion_consultar_medicamento
+  - opcion_ubicacion
+  - opcion_horarios
+  - opcion_hablar_farmaceutico
+  - opciones_menu
+  - afirmar
+  - negar
+  - listar_sintomas
+  - solicitar_contacto_farmaceutico
+  - stop
+  - consultar_medicamento_nombre
+  - listar_medicamentos 
+  - volver_menu
+  - ayuda
+  - cancelar
+  - otro_medicamento 
+  - otro_sintoma    
+  - recargar_sintomas
+  - recargar_medicamentos 
+  - enviar_calificacion   
+  - reporte_feedback
+
+
+entities:
+  - sintoma
+  - nombre
+  - telefono
+  - preferencia_contacto
+  - motivo
+  - medicamento
+  - rating
+
+slots:
+  sintoma:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sintoma
+  nombre:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: contacto_ticket_form
+            requested_slot: nombre
+  telefono:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: contacto_ticket_form
+            requested_slot: telefono
+  correo:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: contacto_ticket_form
+            requested_slot: correo
+  preferencia_contacto:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: contacto_ticket_form
+            requested_slot: preferencia_contacto
+  motivo:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: contacto_ticket_form
+            requested_slot: motivo
+
+  rating:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: rating
+
+        
+
+  
+forms:
+  contacto_ticket_form:
+    required_slots:
+      - nombre
+      - telefono
+      - correo
+      - preferencia_contacto
+      - motivo
+
+  
+responses:
+  utter_greet:
+    - text: "👋 ¡Hola! Bienvenido a Farmacias Emanuel."
+  
+  utter_menu:
+    - text: |
+        ¿Cómo puedo ayudarte hoy?
+        1️⃣ Consultar síntoma  
+        2️⃣ Consultar medicamentos 
+        3️⃣ Conocer ubicación de la farmacia  
+        4️⃣ Ver horarios de atención  
+        5️⃣ Hablar con un farmacéutico  
+        Por favor escribe el número o nombre de la opción deseada.
+
+  utter_ayuda:
+    - text: |
+        Puedo, ayudar con:
+        1️⃣ Consultar síntoma --> Escribe el síntoma que estas padeciendo y te recomendare un medicamento e indicaciones. También puedes escribir: *síntomas* y te mostrare todos los síntomas que reconozco.
+        2️⃣ Consultar medicamentos --> Escribe el nombre del medicamento que quieras consultar y te mostrare su contenido, uso y dósis además de información complementaria. También puedes escribir: *medicamentos* y te mostrare el catálogo de medicamento del que dispongo.
+        3️⃣ Conocer ubicación de la farmacia --> Puedes conocer el lugar donde se ubican nuestras sucursales. 
+        4️⃣ Ver horarios de atención --> Consulta nuestros horarios de atención en cada sucursal. 
+        5️⃣ Hablar con un farmacéutico  --> Si quieres una atención personalizada dejanos saber tus datos y te contactaremos lo más pronto posible.
+        Escribe el número o el nombre de la opción, o "volver" para regresar al menú..
+
+  utter_ubicacion:
+    - text: "📍 Estamos en Zaculeu Central Zona 9, Huehuetenango"
+
+  utter_horario:
+    - text: "🕒 Horario: Lunes a Sábado, 8:00 a.m. - 8:00 p.m."
+
+  utter_despedida:
+    - text: "¡Gracias por visitarnos! 💊 Que tengas un excelente día."
+
+  utter_cancelado:
+    - text: "Listo, cancelé la operación en curso y regresé al menú."
+
+  utter_solicitar_sintoma:
+    - text: "¿Cuál es el síntoma que estás presentando? (Ej: dolor de cabeza, fiebre, diarrea)"
+
+  utter_solicitar_medicamento:
+    - text: "¿Qué medicamento deseas consultar?"
+
+  utter_ok_despedida:
+    - text: "✅ Listo. Si necesitas algo más, aquí estoy."
+
+  utter_mostrar_lista_sintomas:
+    - text: |
+        📋 Lista de síntomas que puedo reconocer:
+        🤕 Dolor:
+        • Dolor de cabeza
+        • Dolor de garganta
+        • Dolor de espalda
+        • Dolor muscular
+        • Dolor de muelas
+        🤒 Malestar general:
+        • Fiebre
+        • Mareo
+        • Náuseas
+        • Diarrea
+        • Acidez estomacal
+        🤧 Problemas respiratorios:
+        • Congestión nasal
+        • Tos
+        🩹 Piel y alergias:
+        • Quemadura leve
+        • Urticaria
+        💪 Otros:
+        • Calambres
+        • Dolor menstrual
+        • Estreñimiento
+        • Dolor de oído
+        Escribe ahora un síntoma (por ejemplo: *dolor de espalda*)
+      buttons:
+        - title: "Ir al menú"
+          payload: "menú"
+
+
+  utter_mostrar_lista_medicamentos:
+    - text: |
+        📋 Lista de medicamentos que puedo reconocer:
+        • paracetamol
+        • ibuprofeno
+        • naproxeno 
+        • diclofenaco 
+        • ketorolaco
+        • loratadina
+        • cetirizina
+        • clorfeniramina
+        • omeprazol
+        • famotidina
+        • metoclopramida
+        • domperidona
+        • loperamida
+        • sueros orales
+        • butilescopolamina
+        • simeticona
+        • dextrometorfano
+        • guaifenesina
+        • ambroxol
+        • oximetazolina
+        • clotrimazol
+        • miconazol
+        • hidrocortisona 1% 
+        • peroxido de benzoilo
+        • melatonina
+        Escribe ahora un medicamento (por ejemplo: *diclofenaco*)
+      buttons:
+        - title: "Ir al menú"
+          payload: "menú"
+
+  utter_derivar_farmaceutico:
+  - text: "🔍 Perfecto, crearé un ticket para que un farmacéutico te contacte. Necesito unos datos breves."
+
+  utter_ask_nombre:
+  - text: "¿Cuál es tu nombre completo?"
+
+  utter_ask_telefono:
+  - text: "¿Cuál es tu número de teléfono?"
+
+  utter_ask_correo:
+  - text: "¿Cuál es tu correo electrónico?."
+
+  utter_ask_preferencia_contacto:
+  - text: "¿Prefieres que te contacten por llamada, WhatsApp o email?"
+
+  utter_ask_motivo:
+  - text: "Cuéntame brevemente el motivo de la consulta para el farmacéutico."
+
+  utter_ticket_enviado:
+  - text: "📝 ¡Listo! Envié tu solicitud (ID: {ticket_id}). Te contactaremos por {preferencia_contacto} al {telefono}{cola_correo}."
+
+  utter_pedir_medicamento_nombre:
+    - text: "¿Qué medicamento deseas consultar?"
+
+    
+
+
+actions:
+  - action_consultar_medicamento
+  - action_elegir_opcion
+  - action_listar_sintomas
+  - validate_contacto_ticket_form
+  - action_enviar_ticket_email
+  - action_consultar_por_nombre           # ← NUEVO (la lógica principal)
+  - action_listar_medicamentos            # ← NUEVO (muestra la lista)
+  - action_pedir_medicamento_nombre
+  - action_recargar_sintomas
+  - action_recargar_medicamentos
+  - action_enviar_calificacion
+  - action_reporte_feedback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
