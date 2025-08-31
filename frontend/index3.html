@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Farmacias Emanuel | Chatbot</title>  
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">FE</div>
+      <div class="titleblock">
+        <h1>Farmacias Emanuel — Asistente Virtual</h1>
+        <p>Consulta rápida de síntomas, medicamentos, horarios y ubicación. <b>No sustituye atención médica profesional.</b></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="container">
+      <!-- Info / Contexto -->
+      <section class="card">
+        <h2>Sobre el asistente</h2>
+        <p>Este chatbot de atención farmacéutica ofrece recomendaciones generales de medicamentos de venta libre a partir de síntomas comunes, además de información de contacto y ubicación.</p>
+        <p>Alcance del prototipo:</p>
+        <div>
+          <span class="pill">Reconoce 20+ síntomas</span>
+          <span class="pill">Menú guiado</span>
+          <span class="pill">Corrección ortográfica básica</span>
+          <span class="pill">Ticket para hablar con farmacéutico</span>
+        </div>
+        <h3>⚠️ *Aviso*</h3>
+        <div><p>La información proporcionada es solo de carácter informativo y <b>no sustituye</b>
+    la valoración de un profesional de la salud. Para un diagnóstico o tratamiento adecuado,
+    consulte siempre a su médico o farmacéutico.</p></div>
+      </section>
+
+      <!-- Chat -->
+      <section class="chat" id="chatBox">
+        <div class="chat__header">
+          <div class="chat__avatar">💊</div>
+          <div>
+            <div class="chat__title">Asistente de Farmacia</div>
+            <div class="chat__subtitle">En línea • tiempo de respuesta &lt; 2s</div>
+          </div>
+          <span class="badge" id="statusBadge">Conectado</span>
+        </div>
+
+        <div class="chat__scroll" id="chatScroll">
+          <!-- Mensajes se inyectan aquí -->
+        </div>
+
+        <div class="chat__input">
+          <div class="field">
+            <span>💬</span>
+            <input id="msg" type="text" placeholder="Escribe tu mensaje... (Enter para enviar)" autocomplete="off" />
+          </div>
+          <button class="btn" id="sendBtn">Enviar</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Botón flotante para abrir/cerrar chat en móvil -->
+  <button class="fab" id="fab">💬</button>
+
+<script src="./app.js"></script>
+</body>
+</html>
