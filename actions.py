@@ -40,7 +40,6 @@ def norm(s: Optional[str]) -> str:
     s = re.sub(r"\s+", " ", s)
     return s
 
-
 EMERGENCIA_KEYWORDS = [
     "dolor de pecho", "dificultad para respirar", "falta de aire",
     "perdida de conciencia", "pérdida de conciencia"
@@ -283,7 +282,6 @@ class ActionConsultarPorNombre(Action):
                 
             )
             
-
             dispatcher.utter_message(text=ficha)
             # === pedir calificación ===
             dispatcher.utter_message(
