@@ -1,0 +1,510 @@
+version: "3.1"
+
+nlu:
+
+
+- intent: elegir_opcion
+  examples: |
+    - 1
+    - uno
+    - consultar sintoma
+    - deseo consultar sintoma
+    - 2
+    - dos
+    - consultar medicamento
+    - deseo consultar medicamento
+    - 3
+    - tres
+    - ubicación
+    - donde se encuentran
+    - 4
+    - cuatro
+    - horario
+    - cuáles son los horarios
+    - 5
+    - cinco
+    - hablar con farmacéutico
+    - quiero hablar con alguien
+
+
+- intent: saludo
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - qué tal
+    - hola, buen día
+
+- intent: despedida_fin
+  examples: |
+    - adiós
+    - adios
+    - bye
+    - hasta luego
+    - nos vemos
+    - muchas gracias, adiós
+    - gracias por la ayuda
+    - hasta pronto
+    - eso es todo
+    - gracias por todo
+
+- intent: opciones_menu
+  examples: |
+    - menu
+    - muéstrame el menú
+    - quiero ver las opciones
+    - qué puedo hacer
+    - dame las opciones del menú
+
+- intent: opcion_consultar_medicamento
+  examples: |
+    - consultar medicamentos por síntoma
+    - opción 1
+    - la opción uno
+    - medicamentos por síntoma
+    - quiero consultar medicamentos
+
+- intent: opcion_ubicacion
+  examples: |
+    - conocer ubicación de la farmacia
+    - opción 2
+    - dónde están ubicados
+    - dirección de la farmacia
+    - dónde queda la farmacia
+
+- intent: opcion_horarios
+  examples: |
+    - ver horarios de atención
+    - opción 3
+    - cuál es el horario
+    - a qué hora abren
+    - cuáles son sus horarios
+
+- intent: opcion_hablar_farmaceutico
+  examples: |
+    - hablar con un farmacéutico
+    - opción 4
+    - necesito ayuda de un farmacéutico
+    - quiero hablar con un experto
+    - puedo hablar con un farmacéutico
+
+- intent: negar
+  examples: |
+    - n
+    - no
+    - nop
+    - negativo
+    - ya no
+    - gracias, no
+
+- intent: consultar_medicamento
+  examples: |
+      - tengo [dolor de cabeza]{"entity":"sintoma","value":"dolor de cabeza"}
+      - me duele la [cabeza]{"entity":"sintoma","value":"dolor de cabeza"}
+      - que puedo tomar para el [dolor de cabeza]{"entity":"sintoma","value":"dolor de cabeza"}
+      - [migraña]{"entity":"sintoma","value":"dolor de cabeza"}
+
+      - tengo [fiebre]{"entity":"sintoma","value":"fiebre"}
+      - me siento con [temperatura]{"entity":"sintoma","value":"fiebre"}
+      - estoy [caliente]{"entity":"sintoma","value":"fiebre"}
+      - que medicamento para la [fiebre]{"entity":"sintoma","value":"fiebre"}
+
+      - tengo [tos]{"entity":"sintoma","value":"tos"}
+      - no puedo dejar de [toser]{"entity":"sintoma","value":"tos"}
+      - algo para la [tos]{"entity":"sintoma","value":"tos"}
+
+      - tengo [congestión nasal]{"entity":"sintoma","value":"congestion nasal"}
+      - estoy [congestionado]{"entity":"sintoma","value":"congestion nasal"}
+      - tengo la [nariz tapada]{"entity":"sintoma","value":"congestion nasal"}
+      - [nariz tupida]{"entity":"sintoma","value":"congestion nasal"}
+
+      - tengo [dolor muscular]{"entity":"sintoma","value":"dolor muscular"}
+      - me duelen los [músculos]{"entity":"sintoma","value":"dolor muscular"}
+      - [agujetas]{"entity":"sintoma","value":"dolor muscular"}
+
+      - tengo [acidez estomacal]{"entity":"sintoma","value":"acidez estomacal"}
+      - me arde el [estómago]{"entity":"sintoma","value":"acidez estomacal"}
+      - tengo [agruras]{"entity":"sintoma","value":"acidez estomacal"}
+
+      - tengo [náuseas]{"entity":"sintoma","value":"nauseas"}
+      - estoy con [vómito]{"entity":"sintoma","value":"nauseas"}
+      - me dan [ganas de vomitar]{"entity":"sintoma","value":"nauseas"}
+
+      - tengo [diarrea]{"entity":"sintoma","value":"diarrea"}
+      - voy mucho al [baño]{"entity":"sintoma","value":"diarrea"}
+
+      - tengo [mareo]{"entity":"sintoma","value":"mareo"}
+      - me siento [mareado]{"entity":"sintoma","value":"mareo"}
+      - [vértigo]{"entity":"sintoma","value":"mareo"}
+
+      - tengo [dolor de garganta]{"entity":"sintoma","value":"dolor de garganta"}
+      - me duele la [garganta]{"entity":"sintoma","value":"dolor de garganta"}
+
+      - tengo [dolor de muelas]{"entity":"sintoma","value":"dolor de muelas"}
+      - me duele la [muela]{"entity":"sintoma","value":"dolor de muelas"}
+
+      - tengo [dolor de espalda]{"entity":"sintoma","value":"dolor de espalda"}
+      - me duele la [espalda baja]{"entity":"sintoma","value":"dolor de espalda"}
+
+      - tengo [dolor de oido]{"entity":"sintoma","value":"dolor de oido"}
+      - me duele el [oído]{"entity":"sintoma","value":"dolor de oido"}
+
+      - tengo [alergia]{"entity":"sintoma","value":"alergia"}
+      - estornudos por [alergia]{"entity":"sintoma","value":"alergia"}
+
+      - tengo [irritación ocular]{"entity":"sintoma","value":"irritacion ocular"}
+      - me arden los [ojos]{"entity":"sintoma","value":"irritacion ocular"}
+
+      - tengo [ardor al orinar]{"entity":"sintoma","value":"ardor al orinar"}
+      - [orinar] con ardor{"entity":"sintoma","value":"ardor al orinar"}
+
+      - estoy [estreñido]{"entity":"sintoma","value":"estrenimiento"}
+      - [constipación]{"entity":"sintoma","value":"estrenimiento"}
+
+      - tengo [granitos]{"entity":"sintoma","value":"acne"}
+      - [acné]{"entity":"sintoma","value":"acne"}
+
+      - tengo [aftas bucales]{"entity":"sintoma","value":"aftas bucales"}
+      - [llagas en la boca]{"entity":"sintoma","value":"aftas bucales"}
+
+      - tengo [resfriado]{"entity":"sintoma","value":"resfriado comun"}
+      - estoy [engripado]{"entity":"sintoma","value":"resfriado comun"}
+
+      - tengo [indigestión]{"entity":"sintoma","value":"indigestion"}
+      - [empacho]{"entity":"sintoma","value":"indigestion"}
+
+      - tengo [calambres]{"entity":"sintoma","value":"calambres"}
+      - me dan [tirones]{"entity":"sintoma","value":"calambres"}
+
+      - tengo [picaduras]{"entity":"sintoma","value":"picaduras"}
+      - me picó un [mosquito]{"entity":"sintoma","value":"picaduras"}
+
+      - tengo [piel seca]{"entity":"sintoma","value":"piel seca"}
+      - [resequedad] en la piel{"entity":"sintoma","value":"piel seca"}
+
+      - tengo [hemorroides]{"entity":"sintoma","value":"hemorroides"}
+      - [almorranas]{"entity":"sintoma","value":"hemorroides"}
+
+      - tengo [pie de atleta]{"entity":"sintoma","value":"pie de atleta"}
+      - hongos en los [pies]{"entity":"sintoma","value":"pie de atleta"}
+
+      - tengo [dolor menstrual]{"entity":"sintoma","value":"dolor menstrual"}
+      - [cólicos] menstruales{"entity":"sintoma","value":"dolor menstrual"}
+
+      - tengo [quemadura leve]{"entity":"sintoma","value":"quemadura leve"}
+      - me [quemé] la piel{"entity":"sintoma","value":"quemadura leve"}
+
+      - tengo [urticaria]{"entity":"sintoma","value":"urticaria"}
+      - me salieron [ronchas]{"entity":"sintoma","value":"urticaria"}
+
+      - tengo [insomnio]{"entity":"sintoma","value":"insomnio"}
+      - no puedo [dormir]{"entity":"sintoma","value":"insomnio"}
+
+      - tengo [dolor abdominal]{"entity":"sintoma","value":"dolor abdominal"}
+      - me duele la [panza]{"entity":"sintoma","value":"dolor abdominal"}
+      - [dolor de estomago]{"entity":"sintoma","value":"dolor abdominal"}
+
+- intent: listar_sintomas
+  examples: |
+    - ¿Qué síntomas entiendes?
+    - ¿Qué síntomas reconoces?
+    - ¿Qué puedo consultar?
+    - ¿Qué sabes identificar?
+    - Muéstrame los síntomas disponibles
+    - Dame la lista de síntomas
+    - síntomas
+    - sintomas
+    - Ver síntomas
+    - ¿Qué síntomas manejas?
+    - ¿Cuáles son los síntomas que puedes reconocer?
+    - ¿Qué opciones de síntomas hay?
+    - ¿Qué problemas de salud reconoces?
+    - Quiero ver los síntomas
+    - Menciona los síntomas que conoces
+    - ¿Qué tipo de síntomas puedes atender?
+    - Dime los síntomas compatibles
+    - Síntomas disponibles
+    - Ayuda con síntomas
+
+- intent: solicitar_contacto_farmaceutico
+  examples: |
+    - quiero hablar con un farmacéutico
+    - necesito hablar con un farmacéutico
+    - hablar con un asesor
+    - contactar a un farmacéutico
+    - comunícame con un farmacéutico
+    - opción 4
+    - quiero hablar con alguien
+
+- intent: stop
+  examples: |
+    - cancelar
+    - detener
+    - mejor no
+    - olvídalo
+    - ya no
+
+  # Sinónimos de entidad (normalización a valores canónicos)
+- synonym: congestion nasal
+  examples: |
+      - congestión nasal
+      - nariz tapada
+      - nariz tupida
+      - estoy congestionado
+      - nasal congestion
+
+- synonym: nauseas
+  examples: |
+      - náuseas
+      - vomito
+      - vómito
+      - ganas de vomitar
+      - estoy con vomitos
+      - estoy con vómitos
+
+- synonym: estrenimiento
+  examples: |
+      - estreñido
+      - estreñimiento
+      - estrenido
+      - estriñido
+      - constipación
+      - constipacion
+
+- synonym: irritacion ocular
+  examples: |
+      - irritación ocular
+      - ojos irritados
+      - ardor en los ojos
+      - picazón en los ojos
+
+- synonym: resfriado comun
+  examples: |
+      - resfriado
+      - gripa
+      - gripe leve
+      - estoy engripado
+
+- synonym: indigestion
+  examples: |
+      - indigestión
+      - empacho
+      - pesadez estomacal
+
+- synonym: acne
+  examples: |
+      - acné
+      - granitos
+      - espinillas
+
+- synonym: dolor de oido
+  examples: |
+      - dolor de oído
+      - me duele el oido
+      - dolor en el oido
+
+- synonym: dolor abdominal
+  examples: |
+      - dolor de estomago
+      - dolor de estómago
+      - dolor de barriga
+      - me duele la panza
+      - cólico abdominal
+
+- intent: consultar_medicamento_nombre
+  examples: |
+    # Comandos de inicio de flujo
+    - 2
+    - Consultar medicamentos por nombre
+    - Quiero consultar por nombre
+    - medicamento por nombre
+    - consulta de medicamento
+
+    # Peticiones con nombre “en crudo” para que NLU rutee aquí
+    - paracetamol
+    - ibuprofeno
+    - naproxeno
+    - diclofenaco
+    - ketorolaco
+    - loratadina
+    - cetirizina
+    - clorfeniramina
+    - omeprazol
+    - famotidina
+    - metoclopramida
+    - domperidona
+    - loperamida
+    - sueros orales
+    - butilescopolamina
+    - simeticona
+    - dextrometorfano
+    - guaifenesina
+    - ambroxol
+    - oximetazolina
+    - clotrimazol
+    - miconazol
+    - hidrocortisona 1%
+    - peroxido de benzoilo
+    - melatonina
+
+    # Variantes con frase
+    - información de paracetamol
+    - ¿qué es ibuprofeno?
+    - dame datos de loratadina
+    - dosis de omeprazol
+    - efectos de loperamida
+    - presentación de clotrimazol
+    - uso de butilescopolamina
+    - quiero saber sobre melatonina
+    - ficha de famotidina
+    - datos de cetirizina
+    - qué es metoclopramida
+    - info de domperidona
+    - información de sueros orales
+    - info de simeticona
+    - ficha de dextrometorfano
+    - info de guaifenesina
+    - información de ambroxol
+    - información de oximetazolina
+    - datos de miconazol
+    - información de hidrocortisona 1%
+    - info de peroxido de benzoilo
+    - ¿qué es diclofenaco?
+    - información de ketorolaco
+
+- intent: listar_medicamentos
+  examples: |
+    - medicamentos
+    - listar medicamentos
+    - ver lista de medicamentos
+    - ver medicamentos
+    - mostrar medicamentos
+    - listado de medicamentos disponibles
+
+- intent: volver_menu
+  examples: |
+    - volver
+    - menú
+    - regresar al menú
+    - inicio
+
+- intent: ayuda
+  examples: |
+    - ayuda
+    - qué opciones hay
+    - que puedes hacer
+    - menú de ayuda
+
+- intent: cancelar
+  examples: |
+    - cancelar
+    - detener
+    - olvídalo
+    - mejor no
+
+# Lookup para mejorar reconocimiento de nombres y sinónimos
+- lookup: medicamento
+  examples: |
+    paracetamol
+    ibuprofeno
+    naproxeno
+    diclofenaco
+    ketorolaco
+    loratadina
+    cetirizina
+    clorfeniramina
+    omeprazol
+    famotidina
+    metoclopramida
+    domperidona
+    loperamida
+    sueros orales
+    butilescopolamina
+    simeticona
+    dextrometorfano
+    guaifenesina
+    ambroxol
+    oximetazolina
+    clotrimazol
+    miconazol
+    hidrocortisona 1%
+    peroxido de benzoilo
+    melatonina
+    # sinónimos/regionales
+    acetaminofen
+    tylenol
+    panadol
+    tempra
+    advil
+    motrin
+    advil liqui-gels
+    motrin ib
+    aleve
+    naxen
+    apronax
+    voltaren
+    voltaren emulgel
+    claritin
+    zyrtec
+    pepcid
+    imodium
+    buscapina
+    buscopan
+    vick 44
+    afrin
+    sinex
+    robitussin
+    mucosolvan
+    canesten
+    daktarin
+    benzac
+    losec
+    prilosec
+    vida suero oral
+    electrolit
+
+- intent: otro_sintoma
+  examples: |
+    - nuevo sintoma
+    - consultar nuevo sintoma
+    - consultar otro sintoma
+    - nuevo síntoma
+    - consultar nuevo síntoma
+
+
+- intent: otro_medicamento
+  examples: |
+    - otro medicamento
+    - consultar otro medicamento
+    - otros medicamentos
+    - consultar otros medicamento
+
+- intent: recargar_sintomas
+  examples: |
+    - recargar síntomas
+    - actualizar síntomas
+    - refrescar síntomas
+    - reload síntomas
+
+- intent: recargar_medicamentos
+  examples: |
+    - recargar medicamentos
+    - actualizar medicamentos
+    - refrescar medicamentos
+    - reload medicamentos
+
+- intent: enviar_calificacion
+  examples: |
+    - /enviar_calificacion{"rating":5}
+    - /enviar_calificacion{"rating":4}
+    - /enviar_calificacion{"rating":3}
+    - /enviar_calificacion{"rating":2}
+    - /enviar_calificacion{"rating":1}
+
+- intent: reporte_feedback
+  examples: |
+    - mostrar reporte de feedback
+    - ver métricas de feedback
+    - estadísticas de satisfacción
+    - reporte de calificaciones
+    - métricas de usuarios

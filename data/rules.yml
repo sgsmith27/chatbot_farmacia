@@ -1,0 +1,135 @@
+version: "3.1"
+
+rules:
+
+- rule: Mostrar menú principal
+  steps:
+    - intent: opciones_menu
+    - action: utter_menu
+
+- rule: Mostrar menú después del saludo
+  steps:
+    - intent: saludo
+    - action: utter_menu
+
+- rule: Elegir opción 1 - Consultar sintoma
+  steps:
+    - intent: consultar_medicamento
+    - action: action_consultar_medicamento
+
+- rule: Elegir opción 3 - Ver ubicación
+  steps:
+    - intent: opcion_ubicacion
+    - action: utter_ubicacion
+
+- rule: Elegir opción 4 - Ver horario
+  steps:
+    - intent: opcion_horarios
+    - action: utter_horario
+
+- rule: Usuario no desea consultar otro síntoma
+  steps:
+    - intent: negar
+    - action: utter_menu
+
+- rule: Mostrar lista de síntomas
+  steps:
+    - intent: listar_sintomas
+    - action: utter_mostrar_lista_sintomas
+
+- rule: despedida final de usuario  
+  steps:
+    - intent: despedida_fin
+    - action: utter_ok_despedida
+
+- rule: Iniciar ticket por intent directo
+  steps:
+    - intent: solicitar_contacto_farmaceutico
+    - action: utter_derivar_farmaceutico
+    - action: contacto_ticket_form
+    - active_loop: contacto_ticket_form
+
+- rule: Iniciar ticket tras elegir opción 5 (utter ya existente)
+  steps:
+    - action: utter_derivar_farmaceutico
+    - action: contacto_ticket_form
+    - active_loop: contacto_ticket_form
+
+- rule: Enviar ticket por email al cerrar form
+  condition:
+    - active_loop: contacto_ticket_form
+  steps:
+    - action: contacto_ticket_form
+    - active_loop: null
+    - action: action_enviar_ticket_email
+
+- rule: Cancelar formulario (stop)
+  condition:
+    - active_loop: contacto_ticket_form
+  steps:
+    - intent: stop
+    - action: utter_cancelado
+    - action: action_deactivate_loop
+    - active_loop: null
+
+- rule: Ayuda
+  steps:
+    - intent: ayuda
+    - action: utter_ayuda
+
+- rule: Volver al menú
+  steps:
+    - intent: volver_menu
+    - action: utter_menu
+
+- rule: Cancelar
+  steps:
+    - intent: cancelar
+    - action: utter_cancelado
+    - action: utter_menu
+
+# -------- Opción 2: flujo por acción directa --------
+- rule: Consultar por nombre (cualquier etapa)
+  steps:
+    - intent: consultar_medicamento_nombre
+    - action: action_consultar_por_nombre
+
+# Listar medicamentos en cualquier momento
+- rule: Listar medicamentos
+  steps:
+    - intent: listar_medicamentos
+    - action: utter_mostrar_lista_medicamentos
+
+- rule: Otro medicamento
+  steps:
+    - intent: otro_medicamento
+    - action: utter_solicitar_medicamento
+
+- rule: Otro síntoma
+  steps:
+    - intent: otro_sintoma
+    - action: utter_solicitar_sintoma
+
+- rule: Recargar síntomas
+  steps:
+    - intent: recargar_sintomas
+    - action: action_recargar_sintomas
+
+- rule: Recargar medicamentos
+  steps:
+    - intent: recargar_medicamentos
+    - action: action_recargar_medicamentos
+
+- rule: Enviar calificación (botones 1-5)
+  steps:
+    - intent: enviar_calificacion
+    - action: action_enviar_calificacion
+
+- rule: Generar reporte de feedback
+  steps:
+    - intent: reporte_feedback
+    - action: action_reporte_feedback
+
+
+
+

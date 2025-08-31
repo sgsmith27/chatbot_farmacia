@@ -1,0 +1,47 @@
+version: "3.1"
+
+stories:
+
+- story: flujo saludo y menú
+  steps:
+    - intent: saludo
+    - action: utter_menu
+
+- story: seleccionar opción del menú
+  steps:
+    - intent: elegir_opcion
+    - action: action_elegir_opcion
+
+- story: consultar medicamento
+  steps:    
+    - intent: consultar_medicamento
+    - action: action_consultar_medicamento
+
+- story: ubicación farmacia
+  steps:
+    - intent: opcion_ubicacion
+    - action: utter_ubicacion
+
+- story: ver horario
+  steps:
+    - intent: opcion_horarios
+    - action: utter_horario
+
+- story: hablar con farmacéutico (form)
+  steps:
+    - intent: solicitar_contacto_farmaceutico
+    - action: utter_derivar_farmaceutico
+    - action: contacto_ticket_form
+    - active_loop: contacto_ticket_form
+
+- story: consultar otro síntoma
+  steps:
+    - intent: afirmar
+    - action: utter_solicitar_sintoma
+
+- story: no desea consultar otro síntoma
+  steps:
+    - intent: negar
+    - action: utter_menu
+
+
