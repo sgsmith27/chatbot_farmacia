@@ -1,0 +1,20 @@
+sintoma,medicamento,forma,dosis,efectos_secundarios,advertencias,cuando_consultar,sinonimos
+dolor de cabeza,paracetamol,comprimidos,500–1000 mg cada 6–8 h (máx. 3–4 g/día),"náuseas, malestar gástrico",evitar alcohol; precaución hepática,"si dura >48 h, es muy intenso o hay alerta neurológica",cefalea|dolor cabeza|dolor de cabesa
+dolor de garganta,ibuprofeno o paracetamol,comprimidos,según etiqueta,molestias gástricas,"tomar con alimentos, hidratación adecuada","si dolor incapacitante, fiebre alta o pus en amígdalas",dolor garganta|irritación garganta
+dolor de espalda,ibuprofeno,comprimidos,200–400 mg cada 6–8 h (máx. 1200 mg/día),molestias gástricas,tomar con alimentos; evitar en úlcera,si es incapacitante o hay síntomas neurológicos,lumbalgia|dolor lumbar
+dolor muscular,ibuprofeno o naproxeno,comprimidos,según etiqueta,molestias gástricas,descanso y estiramientos suaves,si dolor incapacitante o persistente,mialgia|dolor musculos
+dolor de muelas,ibuprofeno o naproxeno,comprimidos,según etiqueta,molestias gástricas,evitar automedicación antibiótica,"si dolor severo, hinchazón o fiebre",dolor muela|dolor dental
+dolor menstrual,ibuprofeno o naproxeno,comprimidos,según etiqueta (iniciar al comienzo del dolor),molestias gástricas,tomar con alimentos,si dolor incapacitante o sangrado excesivo,cólicos menstruales|dismenorrea
+dolor de oido,paracetamol o ibuprofeno,comprimidos,según etiqueta,molestias gástricas,evitar introducir objetos en el oído,"si fiebre, supuración o pérdida de audición",dolor oído|otalgia
+fiebre,paracetamol,comprimidos,500–1000 mg cada 6–8 h (máx. 3–4 g/día),náuseas,hidratación; no combinar múltiples antipiréticos,"si fiebre >48 h, o >39°C persistente",temperatura alta
+mareo,meclizina o dimenhidrinato,comprimidos,según etiqueta,somnolencia,evitar conducir si hay mareo,si mareo persistente o acompañado de otros síntomas,vértigo
+náuseas,metoclopramida o domperidona,comprimidos,según etiqueta,"somnolencia, diarrea",precaución en embarazadas,si vómito persistente o deshidratación,nausea|ganas de vomitar
+diarrea,loperamida,comprimidos,2 mg tras cada deposición (máx. 8 mg/día),"estreñimiento, cólicos",hidratación oral adecuada,"si dura >48 h, sangre o fiebre alta",diarrea aguda
+acidez estomacal,omeprazol,cápsulas,20 mg una vez al día (según indicación),"cefalea, molestias digestivas",no uso prolongado sin supervisión,si dolor torácico o pérdida de peso,ardor estómago|reflujo|agruras
+congestión nasal,oximetazolina,spray nasal,1–2 aplicaciones c/12 h (máx. 3 días),ardor nasal,riesgo de rebote si se abusa,si dolor facial intenso o fiebre alta,nariz tapada|nariz congestionada
+tos,dextrometorfano o ambroxol,jarabe,según etiqueta,somnolencia (dextrometorfano),no automedicar antibióticos,"si fiebre, dificultad respiratoria o tos >2 semanas",tos seca|tos con flema
+quemadura leve,clorhexidina o crema antibiótica,crema tópica,aplicar 2–3 veces/día,irritación local,no reventar ampollas,si quemadura extensa o profunda,quemadura piel|quemadura superficial
+urticaria,loratadina o cetirizina,comprimidos,10 mg una vez al día,somnolencia leve,evitar rascado; identificar desencadenante,si urticaria generalizada o dificultad para respirar,alergia piel|ronchas
+calambres,magnesio (suplemento) + hidratación,comprimidos,según etiqueta,molestias gastrointestinales leves,estiramientos suaves,si son muy frecuentes o intensos,espasmos|calambre
+estreñimiento,lactulosa o fibra,jarabe o sobres,según etiqueta,"flatulencia, cólicos",hidratación y dieta rica en fibra,si >5 días sin mejoría o dolor abdominal severo,constipación
+migra�a,ibuprofeno o naproxeno,comprimidos,seg�n etiqueta (iniciar al comienzo del s�ntoma),mol�stias g�stricas,descanso en lugar oscuro; evitar desencadenantes,"si dolor incapacitante, v�mitos persistentes o alteraciones visuales",jaqueca|dolor fuerte de cabeza
