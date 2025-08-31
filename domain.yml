@@ -241,10 +241,7 @@ responses:
 
   utter_pedir_medicamento_nombre:
     - text: "¿Qué medicamento deseas consultar?"
-
     
-
-
 actions:
   - action_consultar_medicamento
   - action_elegir_opcion
